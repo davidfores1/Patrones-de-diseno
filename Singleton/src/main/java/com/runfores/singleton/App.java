@@ -5,6 +5,8 @@
  */
 package com.runfores.singleton;
 
+import com.runfores.singleton.model.Conexion;
+
 /**
  *
  * @author david
@@ -12,6 +14,11 @@ package com.runfores.singleton;
 public class App {
     
     public static void main(String[] args) {
+        Conexion c = Conexion.getInstancia();
+        c.conectar();
+        c.desconectar();
         
+        boolean respuesta = c instanceof Conexion;
+        System.out.println(respuesta);
     }
 }
